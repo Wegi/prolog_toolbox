@@ -32,5 +32,5 @@ element_of(E, [H|T]) :-
 
 %% del_element(E, L, R) - R is the list L without all occurences of E
 del_element(E, [], []).
-del_element(E, [E|T], R) :- !, del_element(E, T, R).
-del_element(E, [H|T], [H|R]) :- del_element(E, T, R). 
+del_element(E, [E|T], R) :- del_element(E, T, R).
+del_element(E, [H|T], [H|R]) :- E \= H, del_element(E, T, R). 
